@@ -3,7 +3,7 @@ from __future__ import unicode_literals
 import re
 
 from .common import InfoExtractor
-
+from ..utils import ExtractorError
 
 class ThisVidIE(InfoExtractor):
     _VALID_URL = r'https?://(?:www\.)?thisvid\.com/(?P<type>videos|embed)/(?P<id>[A-Za-z0-9-]+/?)'
@@ -32,6 +32,11 @@ class ThisVidIE(InfoExtractor):
     def _real_extract(self, url):
         main_id = self._match_id(url)
         webpage = self._download_webpage(url, main_id)
+
+        # Check video is accessible
+        private_user = self._html_search_regex(r'<p>(This video is a private video.*)</p>', webpage, 'private_user_message', default=None)
+        if private_user:
+            raise ExtractorError(private_user, expected=True, video_id=main_id)
 
         # URL decryptor was reversed from version 4.0.4, later verified working with 5.0.1 and may change in the future.
         kvs_version = self._html_search_regex(r'<script [^>]+?src="https://thisvid\.com/player/kt_player\.js\?v=(\d+\.\d+\.\d+(\.\d+)?)">', webpage, 'kvs_version', fatal=False)
