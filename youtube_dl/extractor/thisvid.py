@@ -34,8 +34,8 @@ class ThisVidIE(InfoExtractor):
         webpage = self._download_webpage(url, main_id)
 
         # URL decryptor was reversed from version 4.0.4, later verified working with 5.0.1 and may change in the future.
-        kvs_version = self._html_search_regex(r'<script [^>]+?src="https://thisvid\.com/player/kt_player\.js\?v=(\d+\.\d+\.\d+)">', webpage, 'kvs_version', fatal=False)
-        if not re.match(r"5\.\d+\.\d+", kvs_version):
+        kvs_version = self._html_search_regex(r'<script [^>]+?src="https://thisvid\.com/player/kt_player\.js\?v=(\d+\.\d+\.\d+(\.\d+)?)">', webpage, 'kvs_version', fatal=False)
+        if not re.match(r"5\.\d+\.\d+(\.\d+)?", kvs_version):
             self.report_warning("Major version change (" + kvs_version + ") in player engine--Download may fail.")
 
         title = self._html_search_regex(r'<title>(?:Video: )?(.+?)(?: - ThisVid(?:.com| tube))?</title>', webpage, 'title')
