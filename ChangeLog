@@ -1,3 +1,58 @@
+version 2021.01.24.1
+
+Core
+* Introduce --output-na-placeholder (#27896)
+
+Extractors
+* [franceculture] Make thumbnail optional (#18807)
+* [franceculture] Fix extraction (#27891, #27903)
+* [njpwworld] Fix extraction (#27890)
+* [comedycentral] Fix extraction (#27905)
+* [wat] Fix format extraction (#27901)
++ [americastestkitchen:season] Add support for seasons (#27861)
++ [trovo] Add support for trovo.live (#26125)
++ [aol] Add support for yahoo videos (#26650)
+* [yahoo] Fix single video extraction
+* [lbry] Unescape lbry URI (#27872)
+* [9gag] Fix and improve extraction (#23022)
+* [americastestkitchen] Improve metadata extraction for ATK episodes (#27860)
+* [aljazeera] Fix extraction (#20911, #27779)
++ [minds] Add support for minds.com (#17934)
+* [ard] Fix title and description extraction (#27761)
++ [spotify] Add support for Spotify Podcasts (#27443)
+
+
+version 2021.01.16
+
+Core
+* [YoutubeDL] Protect from infinite recursion due to recursively nested
+  playlists (#27833)
+* [YoutubeDL] Ignore failure to create existing directory (#27811)
+* [YoutubeDL] Raise syntax error for format selection expressions with multiple
+  + operators (#27803)
+
+Extractors
++ [animeondemand] Add support for lazy playlist extraction (#27829)
+* [youporn] Restrict fallback download URL (#27822)
+* [youporn] Improve height and tbr extraction (#20425, #23659)
+* [youporn] Fix extraction (#27822)
++ [twitter] Add support for unified cards (#27826)
++ [twitch] Add Authorization header with OAuth token for GraphQL requests
+  (#27790)
+* [mixcloud:playlist:base] Extract video id in flat playlist mode (#27787)
+* [cspan] Improve info extraction (#27791)
+* [adn] Improve info extraction
+* [adn] Fix extraction (#26963, #27732)
+* [youtube:search] Extract from all sections (#27604)
+* [youtube:search] fix viewcount and try to extract all video sections (#27604)
+* [twitch] Improve login error extraction
+* [twitch] Fix authentication (#27743)
+* [3qsdn] Improve extraction (#21058)
+* [peertube] Extract formats from streamingPlaylists (#26002, #27586, #27728)
+* [khanacademy] Fix extraction (#2887, #26803)
+* [spike] Update Paramount Network feed URL (#27715)
+
+
 version 2021.01.08
 
 Core
