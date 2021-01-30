@@ -418,7 +418,8 @@
  - **Katsomo**
  - **KeezMovies**
  - **Ketnet**
- - **KhanAcademy**
+ - **khanacademy**
+ - **khanacademy:unit**
  - **KickStarter**
  - **KinjaEmbed**
  - **KinoPoisk**
@@ -930,6 +931,7 @@
  - **ThisAmericanLife**
  - **ThisAV**
  - **ThisOldHouse**
+ - **ThisVid**
  - **TikTok**
  - **TikTokUser** (Currently broken)
  - **tinypic**: tinypic.com videos
